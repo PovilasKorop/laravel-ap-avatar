@@ -1,9 +1,38 @@
 <?php
 
 return [
-		'user-management' => [		'title' => 'User management',		'fields' => [		],	],
-		'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',		],	],
-		'users' => [		'title' => 'Users',		'fields' => [			'name' => 'Name',			'email' => 'Email',			'password' => 'Password',			'role' => 'Role',			'remember-token' => 'Remember token',		],	],
+	
+	'user-management' => [
+		'title' => 'User management',
+		'fields' => [
+		],
+	],
+	
+	'roles' => [
+		'title' => 'Roles',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+
+    'avatar' => [
+        'title' => 'Choose avatar',
+        'current' => 'Current avatar',
+        'new_label' => 'Choose new',
+        'submit' => 'Submit'
+    ],
+	
+	'users' => [
+		'title' => 'Users',
+		'fields' => [
+			'name' => 'Name',
+			'email' => 'Email',
+			'password' => 'Password',
+			'role' => 'Role',
+			'remember-token' => 'Remember token',
+		],
+	],
+    'qa_my_profile' => 'My profile',
 	'qa_create' => 'Create',
 	'qa_save' => 'Save',
 	'qa_edit' => 'Edit',

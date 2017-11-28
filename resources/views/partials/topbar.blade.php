@@ -19,9 +19,14 @@
             <span class="icon-bar"></span>
         </a>
 
-        
+        <ul class="nav navbar-nav pull-right">
 
-        
+            <li class="user user-menu" style="margin-top: 10px; margin-right: 20px">
+                <img class="user-image" src="{{ Auth::user()->hasMedia('avatars') ? Auth::user()->getFirstMediaUrl('avatars', 'resized') : '/images/avatar_placeholder.jpg'}}">
+                <span class="hidden-xs" style="margin-left: 3px; color: white">{{ Auth::user()->name }}</span>
+            </li>
+
+        </ul>
 
     </nav>
 </header>

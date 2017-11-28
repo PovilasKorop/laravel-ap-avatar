@@ -57,6 +57,29 @@ class ChangePasswordController extends Controller
         }
     }
 
+    public function updateAvatar(Request $request){
+
+        $this->validate($request, [
+            'avatar' => 'required|image|max:1000'
+        ]);
+
+        $user = Auth::user();
+
+        $file = $request->file('avatar');
+
+        $fileName = $file->getClientOriginalName();
+
+        $file->move(storage_path(), $fileName);
+
+        if($user->hasMedia('avatars')){
+            $user->clearMediaCollection('avatars');
+        }
+
+        $user->addMedia(storage_path() . '/' . $fileName)->toMediaCollection('avatars');
+
+        return redirect()->route('auth.change_password');
+    }
+
     /**
      * Get a validator for an incoming change password request.
      *

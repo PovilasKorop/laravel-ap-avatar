@@ -55,9 +55,9 @@ class User extends Authenticatable implements HasMediaConversions
     public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('resized')
-            ->nonOptimized()
             ->height(50)
             ->width(50)
+            ->crop('crop-center', 50, 50)
             ->nonQueued();
     }
 

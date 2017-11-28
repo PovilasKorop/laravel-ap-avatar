@@ -59,8 +59,7 @@
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
                 <a href="{{ route('auth.change_password') }}">
                     <i class="fa fa-key"></i>
-                    {{--<span class="title">@lang('quickadmin.qa_change_password')</span>--}}
-                    <span class="title">My profile</span>
+                    <span class="title">@lang('quickadmin.qa_my_profile')</span>
                 </a>
             </li>
 

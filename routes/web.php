@@ -9,7 +9,7 @@ $this->post('logout', 'Auth\LoginController@logout')->name('auth.logout');
 // My Profile Routes...
 $this->get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
 $this->patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
-$this->post('choose_avatar', 'HomeController@updateAvatar')->name('choose_avatar');
+$this->post('choose_avatar', 'Auth\ChangePasswordController@updateAvatar')->name('choose_avatar');
 
 // Password Reset Routes...
 $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('auth.password.reset');
