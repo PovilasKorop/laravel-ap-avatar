@@ -73,28 +73,37 @@
 		<div class="col-md-6">
 
             <h3 class="page-title">@lang('quickadmin.avatar.title')</h3>
-            <div class="row">
 
-                <div class="col-md-3">
-                    <h4 class="control-label">@lang('quickadmin.avatar.current'):</h4>
+            {!! Form::open(['method' => 'POST', 'route' => 'choose_avatar', 'files' => true]) !!}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    @lang('quickadmin.avatar.title')
                 </div>
 
-                <div class="col-md-2">
-                    <img src="{{ Auth::user()->hasMedia('avatars') ? Auth::user()->getFirstMediaUrl('avatars', 'resized') : '/images/avatar_placeholder.jpg'}}">
-                </div>
-
-            </div>
-                {!! Form::open(['method' => 'POST', 'route' => 'choose_avatar', 'files' => true]) !!}
-
+                <div class="panel-body">
                     <div class="row">
-                        <div class="col-xs-12 form-group">
-                            {!! Form::label('avatar', trans('quickadmin.avatar.new_label'). ':', ['class' => 'control-label']) !!}
-                            {!! Form::file('avatar') !!}
+
+                        <div class="col-md-3">
+                            <h4 class="control-label">@lang('quickadmin.avatar.current'):</h4>
                         </div>
+
+                        <div class="col-md-2">
+                            <img src="{{ Auth::user()->hasMedia('avatars') ? Auth::user()->getFirstMediaUrl('avatars', 'resized') : '/images/avatar_placeholder.jpg'}}">
+                        </div>
+
                     </div>
 
-                    {!! Form::submit(trans('quickadmin.avatar.submit'), ['class' => 'btn btn-danger']) !!}
-                {!! Form::close() !!}
+                        <div class="row">
+                            <div class="col-xs-12 form-group">
+                                {!! Form::label('avatar', trans('quickadmin.avatar.new_label'). ':', ['class' => 'control-label']) !!}
+                                {!! Form::file('avatar') !!}
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            {!! Form::submit(trans('quickadmin.avatar.submit'), ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 		</div>
 	</div>
 
